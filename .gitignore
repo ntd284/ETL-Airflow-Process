@@ -5,7 +5,3 @@ airlow.cfg
 airflow.db
 credentials.json
 webserver_config.py
-src/plugin/__pycache__
-src/dags/__pycache__
-*.pyc
-__pycache__/

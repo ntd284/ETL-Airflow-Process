@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from airflow.operators.email_operator import EmailOperator
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/nguyentuanduong7/airflow/src/')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/nguyentuanduong7/ETL-Airflow-Process/src/')))
 
 from plugin.Extract_Data import Fetch_data_From_Mysql, Fetch_data_From_Mongodb, Local_data_to_GCS
 from plugin.Transform_Data import (

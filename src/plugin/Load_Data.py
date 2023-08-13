@@ -2,7 +2,7 @@ from google.cloud import bigquery
 from google.cloud import storage
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/nguyentuanduong7/airflow/src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/nguyentuanduong7/ETL-Airflow-Process/src')))
 
 from plugin.Sql_Queries import (
     Query_Update_Bigquery_Datamart_Tiki,
@@ -14,7 +14,7 @@ import json
 
 PROEJECT_BQ = 'project6-airflow'
 DATASET_BQ = 'Data_db'
-credentials_path = '/home/nguyentuanduong7/airflow/credentials.json'
+credentials_path = '/home/nguyentuanduong7/ETL-Airflow-Process/credentials.json'
 bq_client = bigquery.Client.from_service_account_json(credentials_path)
 
 def Bigquery_Datamart_Tiki():

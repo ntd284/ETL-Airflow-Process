@@ -24,7 +24,7 @@ DB_Name = "Tiki_db"
 Col_Name = "Tiki_col"
 
 def Fetch_data_From_Mysql():
-    File = "/home/nguyentuanduong7/airflow/data/Newegg_Staging.json"
+    File = "/home/nguyentuanduong7/ETL-Airflow-Process/data/Newegg_Staging.json"
     f = open(File, "w")
     engine = create_engine(
         f"mysql+mysqlconnector://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
@@ -42,7 +42,7 @@ def Fetch_data_From_Mysql():
     return "DONE"
 
 def Fetch_data_From_Mongodb():
-    File = "/home/nguyentuanduong7/airflow/data/Tiki_Staging.json"
+    File = "/home/nguyentuanduong7/ETL-Airflow-Process/data/Tiki_Staging.json"
     f = open(File, "w")
     Database = client[DB_Name]
     collection = Database[Col_Name]
@@ -59,12 +59,12 @@ def Fetch_data_From_Mongodb():
                 return "Done"
 
 def Local_data_to_GCS():
-    folder_path = "/home/nguyentuanduong7/airflow/data"
+    folder_path = "/home/nguyentuanduong7/ETL-Airflow-Process/airflow/data"
     extension = "*.json"
     file_list = glob.glob(os.path.join(folder_path, extension))
     for filename in file_list:
         bucket_name = "project6-backup"
-        gcs_name = filename.replace("/home/nguyentuanduong7/airflow/data/", "")
+        gcs_name = filename.replace("/home/nguyentuanduong7/ETL-Airflow-Process/airflow/data/", "")
         gsutil_command = [
             "gsutil",
             "-o",

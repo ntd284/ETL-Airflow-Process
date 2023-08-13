@@ -3,7 +3,7 @@ from google.cloud import storage
 
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/nguyentuanduong7/airflow/src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/nguyentuanduong7/ETL-Airflow-Process/src')))
 from plugin.Sql_Queries import Query_Bigquery_DataWarehouse_Tiki, Query_Bigquery_DataWarehouse_Newegg
 import json
 
@@ -12,7 +12,7 @@ storage_client = storage.Client()
 DATASET_BQ = 'Data_db'
 BUCKET_NAME = "project6-backup"
 FILE_GCS_prefix = "/project6-backup/"
-credentials_path = '/home/nguyentuanduong7/airflow/credentials.json'
+credentials_path = '/home/nguyentuanduong7/ETL-Airflow-Process/credentials.json'
 bq_client = bigquery.Client.from_service_account_json(credentials_path)
 
 def GCS_to_Bigquery_Staging():

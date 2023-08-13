@@ -1,1 +1,28 @@
-# Airflow-ETL-Process
+# Build a production level ETL pipeline platform using apache Airflow 
+
+This repository contains code for building a production-level ETL pipeline using Apache Airflow. The pipeline extracts data from various sources (Mongodb, Mysql), transforms it, and loads it into a data warehouse and datamart for business analytic.
+
+## Getting Started
+
+Follow the steps below to set up and run the ETL pipeline.
+
+### Prerequisites
+
+- **Apache Airflow Installation:** Apache Airflow is properly installed on virtual machine.
+- **Database Systems:** Have both Mongodb and Mysql databases installed and properly configured. These databases will serve as sources for data within your ETL process.
+- **Google Cloud SDK (gsutil):** Install and configure the gsutil command-line tool provided by the Google Cloud SDK.
+- **Google Cloud Services Setup:** Create and set up the necessary Google Cloud resources:
+    - **Virtual Machine (VM)**: Provision a virtual machine instance on Google Cloud.
+    - **Google Cloud Storage (GCS)**: Create the required buckets for storing your data.
+    - **Google BigQuery**: Set up and configure a BigQuery dataset to serve as your data warehouse.
+
+### Installation and Configuration
+
+- **Virtual Machine (VM):** Ensure that you have a virtual machine instance set up with the appropriate OS and environment for running your ETL tasks.
+- **Database Configuration:** Install and configure both Mongodb and Mysql databases on your virtual machine. Make sure to have the necessary connection parameters ready.
+- **Google Cloud Setup:** Install and initialize the Google Cloud SDK on your virtual machine. This will provide access to the gsutil command-line tool, which is crucial for interacting with Google Cloud services.
+
+### Process in the Pipeline
+
+1. 
+

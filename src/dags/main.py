@@ -65,8 +65,8 @@ with DAG(
         python_callable=Bigquery_Datamart_Newegg,
     )
 
-    email_function = EmailOperator(
-        task_id="email_function",
+    Successful_project = EmailOperator(
+        task_id="Successful_project",
         to="nguyentuanduong555@gmail.com",
         subject="Airflow success alert",
         html_content="""<h1>test email notification</h1>"""
@@ -79,6 +79,6 @@ with DAG(
 
 MySqL_Fetch_data >> Mongodb_Fetch_data >> Local_data_to_GCS >> GCS_to_Bigquery_Staging
 
-GCS_to_Bigquery_Staging >> Tiki_Bigquery_DataWarehouse >> Tiki_Bigquery_Datamart >> email_function
+GCS_to_Bigquery_Staging >> Tiki_Bigquery_DataWarehouse >> Tiki_Bigquery_Datamart >> Successful_Alert_Project
 
-Tiki_Bigquery_DataWarehouse >> Newegg_Bigquery_DataWarehouse >> Newegg_Bigquery_Datamart >> email_function
+Tiki_Bigquery_DataWarehouse >> Newegg_Bigquery_DataWarehouse >> Newegg_Bigquery_Datamart >> Successful_Alert_Project

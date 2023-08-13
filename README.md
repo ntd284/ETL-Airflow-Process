@@ -54,8 +54,15 @@ The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pip
 (Sql query: [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 - **Newegg_Bigquery_Datamart:** Transform data into Tiki DataMart
 (Sql query: [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
-5. __Success Alert:__ 
+5. __Alert:__ 
 - **Successful_Alert_Project:** Sends email success alert.
+- **Failed_Alert:** Sends email failed alert.
+
+**Daily report at 7 am in Data Studio:**
+- **Newegg daily report:**
+![Alt text](image-1.png)
+- **Tiki daily report:**
+![Alt text](image-2.png)
 
 
 

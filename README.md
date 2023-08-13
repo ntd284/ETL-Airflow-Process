@@ -54,11 +54,8 @@ The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pip
 - **Owner:** Duong
 - **Start Date:** August 11, 2023
 - **Schedule Interval:** Daily at 7:00 AM
-- **The number of retry if process failed:** 3 times
-- **Interval of every retry time:** 5 minutes
-
-
-
+- **Number of Retries:** 3 times
+- **Interval between Retries:** 5 minutes
 
 
 

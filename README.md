@@ -25,14 +25,25 @@ Follow the steps below to set up and run the ETL pipeline.
 ### Process in the Pipeline
 
 **Main DAGs:**
-[Script: main.py](./src/dags/main.py)
+[Main.py](./src/dags/main.py)
 Parameters: None
-![Alt text](image.png)
-The ETL-Airflow-Process DAG handles the following tasks:
 
-Fetches data from MySQL and MongoDB sources.
-Transfers data to Google Cloud Storage (GCS).
-Loads staged data into BigQuery.
-Transforms and loads Tiki and Newegg data into Data Marts.
-Sends email alerts on success.
+![Alt text](image.png)
+
+The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pipeline:
+
+1. __Collect Data__:
+- MySqL_Fetch_data: Extracts data from MySQL.
+- Mongodb_Fetch_data: Extracts data from MongoDB.
+2. __Data Staging__:
+- Local_data_to_GCS: Transfers fetched data to Google Cloud Storage (GCS).
+- GCS_to_Bigquery_Staging: Loads staged data into BigQuery Staging.
+3. __Data Warehouse__:
+- Tiki_Bigquery_DataWarehouse: Transforms and loads Tiki data into BigQuery.
+- Newegg_Bigquery_DataWarehouse: Transforms and loads Newegg data into BigQuery.
+4. __Datamart Creation__:
+- Tiki_Bigquery_Datamart: Creates Tiki Data Mart.
+- Newegg_Bigquery_Datamart: Creates Newegg Data Mart.
+5. __Success Alert__:
+- Successful_Alert_Project: Sends email success alert.
 

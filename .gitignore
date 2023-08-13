@@ -1,0 +1,9 @@
+data/
+logs/
+airflow-webserver.pid
+arflow.cfg
+airflow.db
+credentials.json
+webserver_config.py
+src/dags/__pycache__/
+src/plugin/__pycache__/

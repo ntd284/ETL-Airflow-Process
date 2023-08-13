@@ -32,18 +32,18 @@ Parameters: None
 
 The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pipeline:
 
-1. __Collect Data__:
+1. __Collect Data:__ [Extract_Data.py](./src/plugin/Extract_Data.py)
 - MySqL_Fetch_data: Extracts data from MySQL.
 - Mongodb_Fetch_data: Extracts data from MongoDB.
-2. __Data Staging__:
 - Local_data_to_GCS: Transfers fetched data to Google Cloud Storage (GCS).
+2. __Data Warehouse:__ [Transform_Data.py](./src/plugin/Transform_Data.py)
 - GCS_to_Bigquery_Staging: Loads staged data into BigQuery Staging.
-3. __Data Warehouse__:
 - Tiki_Bigquery_DataWarehouse: Transforms and loads Tiki data into BigQuery.
 - Newegg_Bigquery_DataWarehouse: Transforms and loads Newegg data into BigQuery.
-4. __Datamart Creation__:
+4. __Datamart Creation:__ [Load_Data.py](./src/plugin/Load_Data.py)
 - Tiki_Bigquery_Datamart: Creates Tiki Data Mart.
 - Newegg_Bigquery_Datamart: Creates Newegg Data Mart.
-5. __Success Alert__:
+5. __Success Alert:__ 
 - Successful_Alert_Project: Sends email success alert.
+
 

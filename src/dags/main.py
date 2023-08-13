@@ -29,7 +29,7 @@ default_args = {
 
 with DAG(
     default_args=default_args,
-    dag_id="Project6-airflow",
+    dag_id="ETL-Airflow-Process",
     schedule_interval="0 7 * * *"
 ) as dag:
     MySqL_Fetch_data = PythonOperator(
@@ -65,8 +65,8 @@ with DAG(
         python_callable=Bigquery_Datamart_Newegg,
     )
 
-    Successful_project = EmailOperator(
-        task_id="Successful_project",
+    Successful_Alert_Project = EmailOperator(
+        task_id="Successful_Alert_Project",
         to="nguyentuanduong555@gmail.com",
         subject="Airflow success alert",
         html_content="""<h1>test email notification</h1>"""

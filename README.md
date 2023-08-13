@@ -26,7 +26,6 @@ Follow the steps below to set up and run the ETL pipeline.
 
 **Main DAGs:**
 [Main.py](./src/dags/main.py)
-Parameters: None
 
 ![Alt text](image.png)
 

@@ -38,14 +38,14 @@ The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pip
 2. __Data Warehouse:__ [Transform_Data.py](./src/plugin/Transform_Data.py)
 - **GCS_to_Bigquery_Staging:** Loads staged data into BigQuery Data Staging.
 - **Tiki_Bigquery_DataWarehouse:** Transforms data from Data Staging and loads Tiki data into BigQuery
-(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
+(Sql query: [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 - **Newegg_Bigquery_DataWarehouse:** Transforms data from Data Staging and loads Newegg data into BigQuery
-(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
+(Sql query: [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 4. __Datamart Creation:__ [Load_Data.py](./src/plugin/Load_Data.py)
 - **Tiki_Bigquery_Datamart:** Transform data into Tiki DataMart
-(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
+(Sql query: [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 - **Newegg_Bigquery_Datamart:** Transform data into Tiki DataMart
-(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
+(Sql query: [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 5. __Success Alert:__ 
 - **Successful_Alert_Project:** Sends email success alert.
 

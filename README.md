@@ -27,7 +27,7 @@ Follow the steps below to set up and run the ETL pipeline.
 **Main DAGs:**
 [Main.py](./src/dags/main.py)
 
-![Alt text](image.png)
+![Alt text](./image/image.png)
 
 #### Configuration
 
@@ -60,9 +60,9 @@ The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pip
 
 **Daily report at 7 am in Data Studio:**
 - **Newegg daily report:**
-![Alt text](image-1.png)
+![Alt text](./image/image-1.png)
 - **Tiki daily report:**
-![Alt text](image-2.png)
+![Alt text](./image/image-2.png)
 
 
 

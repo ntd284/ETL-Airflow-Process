@@ -24,5 +24,15 @@ Follow the steps below to set up and run the ETL pipeline.
 
 ### Process in the Pipeline
 
-1. 
+**Main DAGs:**
+[Script: main.py](./src/dags/main.py)
+Parameters: None
+![Alt text](image.png)
+The ETL-Airflow-Process DAG handles the following tasks:
+
+Fetches data from MySQL and MongoDB sources.
+Transfers data to Google Cloud Storage (GCS).
+Loads staged data into BigQuery.
+Transforms and loads Tiki and Newegg data into Data Marts.
+Sends email alerts on success.
 

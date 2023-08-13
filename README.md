@@ -49,6 +49,12 @@ The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pip
 5. __Success Alert:__ 
 - **Successful_Alert_Project:** Sends email success alert.
 
+**Configuration**
+
+- **Owner:** Duong
+- **Start Date:** August 11, 2023
+- **Schedule Interval:** Daily at 7:00 AM
+
 
 
 

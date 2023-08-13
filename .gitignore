@@ -1,7 +1,7 @@
 data/
 logs/
 airflow-webserver.pid
-arflow.cfg
+airlow.cfg
 airflow.db
 credentials.json
 webserver_config.py

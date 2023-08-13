@@ -32,17 +32,25 @@ Follow the steps below to set up and run the ETL pipeline.
 The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pipeline:
 
 1. __Collect Data:__ [Extract_Data.py](./src/plugin/Extract_Data.py)
-- MySqL_Fetch_data: Extracts data from MySQL.
-- Mongodb_Fetch_data: Extracts data from MongoDB.
-- Local_data_to_GCS: Transfers fetched data to Google Cloud Storage (GCS).
+- **MySqL_Fetch_data**: Extracts data from MySQL.
+- **Mongodb_Fetch_data**: Extracts data from MongoDB.
+- **Local_data_to_GCS**: Transfers fetched data to Google Cloud Storage (GCS).
 2. __Data Warehouse:__ [Transform_Data.py](./src/plugin/Transform_Data.py)
-- GCS_to_Bigquery_Staging: Loads staged data into BigQuery Staging.
-- Tiki_Bigquery_DataWarehouse: Transforms and loads Tiki data into BigQuery.
-- Newegg_Bigquery_DataWarehouse: Transforms and loads Newegg data into BigQuery.
+- **GCS_to_Bigquery_Staging:** Loads staged data into BigQuery Data Staging.
+- **Tiki_Bigquery_DataWarehouse:** Transforms data from Data Staging and loads Tiki data into BigQuery
+(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
+- **Newegg_Bigquery_DataWarehouse:** Transforms data from Data Staging and loads Newegg data into BigQuery
+(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 4. __Datamart Creation:__ [Load_Data.py](./src/plugin/Load_Data.py)
-- Tiki_Bigquery_Datamart: Creates Tiki Data Mart.
-- Newegg_Bigquery_Datamart: Creates Newegg Data Mart.
+- **Tiki_Bigquery_Datamart:** Transform data into Tiki DataMart
+(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
+- **Newegg_Bigquery_Datamart:** Transform data into Tiki DataMart
+(using Sql Query in : [Sql_Queries.py](./src/plugin/Sql_Queries.py)).
 5. __Success Alert:__ 
-- Successful_Alert_Project: Sends email success alert.
+- **Successful_Alert_Project:** Sends email success alert.
+
+
+
+
 
 

@@ -61,7 +61,7 @@ The ETL-Airflow-Process DAG handles the following tasks in an end-to-end ETL pip
 **Daily report at 7 am in Data Studio:**
 - **Newegg daily report:**
 ![Alt text](./image/image-1.png)
-- **Tiki daily report:**
+- **Tiki daily report:** 
 ![Alt text](./image/image-2.png)
 
 
